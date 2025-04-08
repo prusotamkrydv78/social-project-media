@@ -1,69 +1,87 @@
-<!-- Sidebar for desktop (icon only) -->
-<div class="hidden md:flex flex-col w-20 bg-white shadow-lg items-center">
+<!-- Sidebar for desktop -->
+<div id="desktopSidebar" class="hidden relative md:flex flex-col bg-white shadow-lg transition-all duration-300 ease-in-out" data-expanded="false">
+  <!-- Toggle Button -->
+  <button id="sidebarToggle" class="absolute -right-4 top-20 bg-white rounded-full w-8 h-8 shadow-md flex items-center justify-center text-primary-500 hover:text-primary-600 transition-colors z-10">
+    <i class="fas fa-chevron-right transition-transform duration-300"></i>
+  </button>
   <!-- Logo -->
-  <div class="py-6 flex justify-center">
-    <a href="/" class="flex items-center justify-center">
+  <div class="py-6 flex justify-center px-4">
+    <a href="/" class="flex items-center">
       <div class="w-12 h-12 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 flex items-center justify-center text-white font-bold text-xl">P</div>
+      <span class="sidebar-text ml-3 text-xl font-bold bg-gradient-to-r from-primary-500 to-secondary-500 text-transparent bg-clip-text opacity-0 w-0 overflow-hidden transition-all duration-300">Pulse</span>
     </a>
   </div>
 
   <!-- Navigation Links -->
   <div class="flex-1 py-6 flex flex-col items-center justify-between w-full">
     <div class="space-y-6 flex flex-col items-center w-full">
-      <a href="/" class="group relative w-full flex justify-center">
-        <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-500 group-hover:bg-primary-200 group-hover:text-primary-600 transition-all">
+      <a href="/" class="nav-link group relative w-full flex items-center px-4 py-2 <%= path === '/' ? 'active' : '' %>">
+        <div class="min-w-[48px] w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-500 group-hover:bg-primary-200 group-hover:text-primary-600 transition-all <%= path === '/' ? 'bg-primary-200 text-primary-600' : '' %>">
           <i class="fas fa-home text-xl"></i>
         </div>
-        <div class="absolute left-0 h-full w-1 bg-primary-500 rounded-r-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        <div class="absolute left-20 bg-dark-800 text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">Home</div>
+        <div class="absolute left-0 h-full w-1 bg-primary-500 rounded-r-lg opacity-0 <%= path === '/' ? 'opacity-100' : 'group-hover:opacity-100' %> transition-opacity"></div>
+        <span class="sidebar-text ml-4 font-medium text-dark-800 opacity-0 w-0 overflow-hidden transition-all duration-300">Home</span>
+        <div class="tooltip absolute left-20 bg-dark-800 text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">Home</div>
       </a>
 
-      <a href="/explore" class="group relative w-full flex justify-center">
-        <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-500 group-hover:bg-primary-200 group-hover:text-primary-600 transition-all">
+      <a href="/explore" class="nav-link group relative w-full flex items-center px-4 py-2 <%= path === '/explore' ? 'active' : '' %>">
+        <div class="min-w-[48px] w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-500 group-hover:bg-primary-200 group-hover:text-primary-600 transition-all <%= path === '/explore' ? 'bg-primary-200 text-primary-600' : '' %>">
           <i class="fas fa-compass text-xl"></i>
         </div>
-        <div class="absolute left-0 h-full w-1 bg-primary-500 rounded-r-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        <div class="absolute left-20 bg-dark-800 text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">Explore</div>
+        <div class="absolute left-0 h-full w-1 bg-primary-500 rounded-r-lg opacity-0 <%= path === '/explore' ? 'opacity-100' : 'group-hover:opacity-100' %> transition-opacity"></div>
+        <span class="sidebar-text ml-4 font-medium text-dark-800 opacity-0 w-0 overflow-hidden transition-all duration-300">Explore</span>
+        <div class="tooltip absolute left-20 bg-dark-800 text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">Explore</div>
       </a>
 
-      <a href="/notifications" class="group relative w-full flex justify-center">
-        <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-500 group-hover:bg-primary-200 group-hover:text-primary-600 transition-all">
+      <a href="/notifications" class="nav-link group relative w-full flex items-center px-4 py-2 <%= path === '/notifications' ? 'active' : '' %>">
+        <div class="min-w-[48px] w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-500 group-hover:bg-primary-200 group-hover:text-primary-600 transition-all <%= path === '/notifications' ? 'bg-primary-200 text-primary-600' : '' %> relative">
           <i class="fas fa-bell text-xl"></i>
           <span class="absolute -top-1 -right-1 bg-secondary-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
         </div>
-        <div class="absolute left-0 h-full w-1 bg-primary-500 rounded-r-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        <div class="absolute left-20 bg-dark-800 text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">Notifications</div>
+        <div class="absolute left-0 h-full w-1 bg-primary-500 rounded-r-lg opacity-0 <%= path === '/notifications' ? 'opacity-100' : 'group-hover:opacity-100' %> transition-opacity"></div>
+        <span class="sidebar-text ml-4 font-medium text-dark-800 opacity-0 w-0 overflow-hidden transition-all duration-300">Notifications</span>
+        <div class="tooltip absolute left-20 bg-dark-800 text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">Notifications</div>
       </a>
 
-      <a href="/messages" class="group relative w-full flex justify-center">
-        <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-500 group-hover:bg-primary-200 group-hover:text-primary-600 transition-all">
+      <a href="/messages" class="nav-link group relative w-full flex items-center px-4 py-2 <%= path === '/messages' ? 'active' : '' %>">
+        <div class="min-w-[48px] w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-500 group-hover:bg-primary-200 group-hover:text-primary-600 transition-all <%= path === '/messages' ? 'bg-primary-200 text-primary-600' : '' %>">
           <i class="fas fa-envelope text-xl"></i>
         </div>
-        <div class="absolute left-0 h-full w-1 bg-primary-500 rounded-r-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        <div class="absolute left-20 bg-dark-800 text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">Messages</div>
+        <div class="absolute left-0 h-full w-1 bg-primary-500 rounded-r-lg opacity-0 <%= path === '/messages' ? 'opacity-100' : 'group-hover:opacity-100' %> transition-opacity"></div>
+        <span class="sidebar-text ml-4 font-medium text-dark-800 opacity-0 w-0 overflow-hidden transition-all duration-300">Messages</span>
+        <div class="tooltip absolute left-20 bg-dark-800 text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">Messages</div>
       </a>
 
-      <a href="/profile" class="group relative w-full flex justify-center">
-        <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-500 group-hover:bg-primary-200 group-hover:text-primary-600 transition-all">
+      <a href="/profile" class="nav-link group relative w-full flex items-center px-4 py-2 <%= path === '/profile' ? 'active' : '' %>">
+        <div class="min-w-[48px] w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-500 group-hover:bg-primary-200 group-hover:text-primary-600 transition-all <%= path === '/profile' ? 'bg-primary-200 text-primary-600' : '' %>">
           <i class="fas fa-user text-xl"></i>
         </div>
-        <div class="absolute left-0 h-full w-1 bg-primary-500 rounded-r-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        <div class="absolute left-20 bg-dark-800 text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">Profile</div>
+        <div class="absolute left-0 h-full w-1 bg-primary-500 rounded-r-lg opacity-0 <%= path === '/profile' ? 'opacity-100' : 'group-hover:opacity-100' %> transition-opacity"></div>
+        <span class="sidebar-text ml-4 font-medium text-dark-800 opacity-0 w-0 overflow-hidden transition-all duration-300">Profile</span>
+        <div class="tooltip absolute left-20 bg-dark-800 text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">Profile</div>
       </a>
 
-      <a href="/create" class="group relative w-full flex justify-center">
-        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 flex items-center justify-center text-white transition-all hover:shadow-lg">
+      <a href="/create" class="nav-link group relative w-full flex items-center px-4 py-2 <%= path === '/create' ? 'active' : '' %>">
+        <div class="min-w-[48px] w-12 h-12 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 flex items-center justify-center text-white transition-all hover:shadow-lg">
           <i class="fas fa-plus text-xl"></i>
         </div>
-        <div class="absolute left-20 bg-dark-800 text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">Create Post</div>
+        <div class="absolute left-0 h-full w-1 bg-primary-500 rounded-r-lg opacity-0 <%= path === '/create' ? 'opacity-100' : 'group-hover:opacity-100' %> transition-opacity"></div>
+        <span class="sidebar-text ml-4 font-medium text-dark-800 opacity-0 w-0 overflow-hidden transition-all duration-300">Create Post</span>
+        <div class="tooltip absolute left-20 bg-dark-800 text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">Create Post</div>
       </a>
     </div>
 
     <!-- User Profile -->
-    <div class="mt-auto pt-4 flex justify-center w-full">
-      <a href="/profile" class="group relative flex justify-center">
-        <img src="https://ui-avatars.com/api/?name=John+Doe&background=0D8ABC&color=fff" alt="Profile" class="w-12 h-12 rounded-full border-2 border-primary-200">
-        <div class="absolute left-20 bg-dark-800 text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">@johndoe</div>
+    <div class="mt-auto pt-4 px-4 w-full">
+      <a href="/profile" class="group relative flex items-center">
+        <div class="min-w-[48px] w-12 h-12 rounded-full bg-primary-500 flex items-center justify-center text-white font-bold text-xl border-2 border-primary-200">
+          JD
+        </div>
+        <div class="sidebar-text ml-3 opacity-0 w-0 overflow-hidden transition-all duration-300">
+          <p class="font-medium text-dark-800">John Doe</p>
+          <p class="text-dark-500 text-sm">@johndoe</p>
+        </div>
+        <div class="tooltip absolute left-20 bg-dark-800 text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">@johndoe</div>
       </a>
     </div>
   </div>

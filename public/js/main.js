@@ -1,4 +1,52 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Desktop sidebar toggle functionality
+  const sidebarToggle = document.getElementById('sidebarToggle');
+  const desktopSidebar = document.getElementById('desktopSidebar');
+  const sidebarTexts = document.querySelectorAll('.sidebar-text');
+  const tooltips = document.querySelectorAll('.tooltip');
+
+  if (sidebarToggle && desktopSidebar) {
+    sidebarToggle.addEventListener('click', function() {
+      const isExpanded = desktopSidebar.getAttribute('data-expanded') === 'true';
+
+      if (isExpanded) {
+        // Collapse sidebar
+        desktopSidebar.style.width = '80px';
+        desktopSidebar.setAttribute('data-expanded', 'false');
+        sidebarToggle.querySelector('i').style.transform = 'rotate(0deg)';
+
+        // Hide text elements
+        sidebarTexts.forEach(text => {
+          text.style.opacity = '0';
+          text.style.width = '0';
+        });
+
+        // Show tooltips
+        tooltips.forEach(tooltip => {
+          tooltip.style.display = 'block';
+        });
+      } else {
+        // Expand sidebar
+        desktopSidebar.style.width = '240px';
+        desktopSidebar.setAttribute('data-expanded', 'true');
+        sidebarToggle.querySelector('i').style.transform = 'rotate(180deg)';
+
+        // Show text elements
+        sidebarTexts.forEach(text => {
+          text.style.opacity = '1';
+          text.style.width = 'auto';
+        });
+
+        // Hide tooltips
+        tooltips.forEach(tooltip => {
+          tooltip.style.display = 'none';
+        });
+      }
+    });
+
+    // Initialize sidebar in collapsed state
+    desktopSidebar.style.width = '80px';
+  }
   // Mobile sidebar functionality
   const openSidebarBtn = document.getElementById('openSidebar');
   const closeSidebarBtn = document.getElementById('closeSidebar');
