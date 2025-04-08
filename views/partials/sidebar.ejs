@@ -1,0 +1,176 @@
+<!-- Sidebar for desktop (icon only) -->
+<div class="hidden md:flex flex-col w-20 bg-white shadow-lg items-center">
+  <!-- Logo -->
+  <div class="py-6 flex justify-center">
+    <a href="/" class="flex items-center justify-center">
+      <div class="w-12 h-12 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 flex items-center justify-center text-white font-bold text-xl">P</div>
+    </a>
+  </div>
+
+  <!-- Navigation Links -->
+  <div class="flex-1 py-6 flex flex-col items-center justify-between w-full">
+    <div class="space-y-6 flex flex-col items-center w-full">
+      <a href="/" class="group relative w-full flex justify-center">
+        <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-500 group-hover:bg-primary-200 group-hover:text-primary-600 transition-all">
+          <i class="fas fa-home text-xl"></i>
+        </div>
+        <div class="absolute left-0 h-full w-1 bg-primary-500 rounded-r-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="absolute left-20 bg-dark-800 text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">Home</div>
+      </a>
+
+      <a href="/explore" class="group relative w-full flex justify-center">
+        <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-500 group-hover:bg-primary-200 group-hover:text-primary-600 transition-all">
+          <i class="fas fa-compass text-xl"></i>
+        </div>
+        <div class="absolute left-0 h-full w-1 bg-primary-500 rounded-r-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="absolute left-20 bg-dark-800 text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">Explore</div>
+      </a>
+
+      <a href="/notifications" class="group relative w-full flex justify-center">
+        <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-500 group-hover:bg-primary-200 group-hover:text-primary-600 transition-all">
+          <i class="fas fa-bell text-xl"></i>
+          <span class="absolute -top-1 -right-1 bg-secondary-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+        </div>
+        <div class="absolute left-0 h-full w-1 bg-primary-500 rounded-r-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="absolute left-20 bg-dark-800 text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">Notifications</div>
+      </a>
+
+      <a href="/messages" class="group relative w-full flex justify-center">
+        <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-500 group-hover:bg-primary-200 group-hover:text-primary-600 transition-all">
+          <i class="fas fa-envelope text-xl"></i>
+        </div>
+        <div class="absolute left-0 h-full w-1 bg-primary-500 rounded-r-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="absolute left-20 bg-dark-800 text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">Messages</div>
+      </a>
+
+      <a href="/profile" class="group relative w-full flex justify-center">
+        <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-500 group-hover:bg-primary-200 group-hover:text-primary-600 transition-all">
+          <i class="fas fa-user text-xl"></i>
+        </div>
+        <div class="absolute left-0 h-full w-1 bg-primary-500 rounded-r-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="absolute left-20 bg-dark-800 text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">Profile</div>
+      </a>
+
+      <a href="/create" class="group relative w-full flex justify-center">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 flex items-center justify-center text-white transition-all hover:shadow-lg">
+          <i class="fas fa-plus text-xl"></i>
+        </div>
+        <div class="absolute left-20 bg-dark-800 text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">Create Post</div>
+      </a>
+    </div>
+
+    <!-- User Profile -->
+    <div class="mt-auto pt-4 flex justify-center w-full">
+      <a href="/profile" class="group relative flex justify-center">
+        <img src="https://ui-avatars.com/api/?name=John+Doe&background=0D8ABC&color=fff" alt="Profile" class="w-12 h-12 rounded-full border-2 border-primary-200">
+        <div class="absolute left-20 bg-dark-800 text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">@johndoe</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile Bottom Navigation Bar -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-dark-100 z-40 px-2 py-2">
+  <div class="flex justify-between items-center">
+    <a href="/" class="flex flex-col items-center justify-center w-12 h-12 rounded-full text-dark-600 hover:text-primary-500 transition-colors">
+      <i class="fas fa-home text-xl"></i>
+    </a>
+
+    <a href="/explore" class="flex flex-col items-center justify-center w-12 h-12 rounded-full text-dark-600 hover:text-primary-500 transition-colors">
+      <i class="fas fa-compass text-xl"></i>
+    </a>
+
+    <a href="/create" class="flex flex-col items-center justify-center w-14 h-14 -mt-5 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg">
+      <i class="fas fa-plus text-xl"></i>
+    </a>
+
+    <a href="/notifications" class="flex flex-col items-center justify-center w-12 h-12 rounded-full text-dark-600 hover:text-primary-500 transition-colors relative">
+      <i class="fas fa-bell text-xl"></i>
+      <span class="absolute top-1 right-1 bg-secondary-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+    </a>
+
+    <a href="/profile" class="flex flex-col items-center justify-center w-12 h-12 rounded-full text-dark-600 hover:text-primary-500 transition-colors">
+      <img src="https://ui-avatars.com/api/?name=John+Doe&background=0D8ABC&color=fff" alt="Profile" class="w-8 h-8 rounded-full border-2 border-primary-200">
+    </a>
+  </div>
+</div>
+
+<!-- Mobile Sidebar Menu (hidden by default) -->
+<div id="mobileSidebar" class="fixed inset-0 z-50 hidden">
+  <!-- Backdrop -->
+  <div class="absolute inset-0 bg-dark-900 bg-opacity-50" id="sidebarBackdrop"></div>
+
+  <!-- Sidebar Content -->
+  <div class="absolute left-0 top-0 bottom-0 w-64 bg-white shadow-lg transform -translate-x-full transition-transform duration-300" id="sidebarContent">
+    <!-- Header -->
+    <div class="p-4 border-b flex justify-between items-center">
+      <div class="flex items-center">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 flex items-center justify-center text-white font-bold text-xl">P</div>
+        <span class="ml-3 text-xl font-bold bg-gradient-to-r from-primary-500 to-secondary-500 text-transparent bg-clip-text">Pulse</span>
+      </div>
+      <button id="closeSidebar" class="w-8 h-8 rounded-full bg-dark-50 flex items-center justify-center text-dark-500 hover:bg-dark-100">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <!-- User Profile -->
+    <div class="p-4 border-b">
+      <div class="flex items-center space-x-3">
+        <img src="https://ui-avatars.com/api/?name=John+Doe&background=0D8ABC&color=fff" alt="Profile" class="w-14 h-14 rounded-full border-2 border-primary-200">
+        <div>
+          <h3 class="font-semibold text-dark-800 text-lg">John Doe</h3>
+          <p class="text-dark-500">@johndoe</p>
+        </div>
+      </div>
+      <div class="flex mt-4 space-x-4 text-center">
+        <div class="flex-1">
+          <div class="font-semibold text-dark-900">248</div>
+          <div class="text-dark-500 text-sm">Posts</div>
+        </div>
+        <div class="flex-1">
+          <div class="font-semibold text-dark-900">12.4K</div>
+          <div class="text-dark-500 text-sm">Followers</div>
+        </div>
+        <div class="flex-1">
+          <div class="font-semibold text-dark-900">843</div>
+          <div class="text-dark-500 text-sm">Following</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu Items -->
+    <div class="py-4 px-4 space-y-2">
+      <a href="/messages" class="flex items-center space-x-3 px-4 py-3 rounded-xl text-dark-600 hover:bg-primary-50 hover:text-primary-600 transition-all">
+        <i class="fas fa-envelope w-6 text-center"></i>
+        <span class="font-medium">Messages</span>
+      </a>
+
+      <a href="/bookmarks" class="flex items-center space-x-3 px-4 py-3 rounded-xl text-dark-600 hover:bg-primary-50 hover:text-primary-600 transition-all">
+        <i class="fas fa-bookmark w-6 text-center"></i>
+        <span class="font-medium">Saved Posts</span>
+      </a>
+
+      <a href="/friends" class="flex items-center space-x-3 px-4 py-3 rounded-xl text-dark-600 hover:bg-primary-50 hover:text-primary-600 transition-all">
+        <i class="fas fa-users w-6 text-center"></i>
+        <span class="font-medium">Friends</span>
+      </a>
+
+      <a href="/settings" class="flex items-center space-x-3 px-4 py-3 rounded-xl text-dark-600 hover:bg-primary-50 hover:text-primary-600 transition-all">
+        <i class="fas fa-cog w-6 text-center"></i>
+        <span class="font-medium">Settings</span>
+      </a>
+
+      <div class="border-t my-2"></div>
+
+      <a href="/help" class="flex items-center space-x-3 px-4 py-3 rounded-xl text-dark-600 hover:bg-primary-50 hover:text-primary-600 transition-all">
+        <i class="fas fa-question-circle w-6 text-center"></i>
+        <span class="font-medium">Help & Support</span>
+      </a>
+
+      <a href="/logout" class="flex items-center space-x-3 px-4 py-3 rounded-xl text-dark-600 hover:bg-primary-50 hover:text-primary-600 transition-all">
+        <i class="fas fa-sign-out-alt w-6 text-center"></i>
+        <span class="font-medium">Log Out</span>
+      </a>
+    </div>
+  </div>
+</div>

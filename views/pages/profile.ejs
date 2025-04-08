@@ -1,0 +1,268 @@
+<div class="max-w-5xl mx-auto">
+  <!-- Profile Header -->
+  <div class="card mb-6 p-0 overflow-hidden">
+    <!-- Cover Photo -->
+    <div class="h-60 bg-gradient-to-r from-primary-400 to-secondary-500 relative">
+      <img src="https://source.unsplash.com/random/1200x400/?landscape,nature" alt="Cover Photo" class="w-full h-full object-cover">
+      
+      <div class="absolute bottom-4 right-4 flex space-x-2">
+        <button class="btn bg-white/80 backdrop-blur-sm text-gray-700 hover:bg-white/90">
+          <i class="fas fa-camera mr-2"></i>
+          Edit Cover
+        </button>
+      </div>
+    </div>
+    
+    <!-- Profile Info -->
+    <div class="px-6 pb-6 relative">
+      <div class="flex flex-col md:flex-row md:items-end">
+        <!-- Profile Picture -->
+        <div class="relative -mt-16 md:-mt-20 mb-4 md:mb-0">
+          <div class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-white overflow-hidden">
+            <img src="https://i.pravatar.cc/150?img=11" alt="Profile" class="w-full h-full object-cover">
+          </div>
+          <button class="absolute bottom-2 right-2 bg-white rounded-full p-2 shadow-md text-gray-700 hover:text-primary-500">
+            <i class="fas fa-camera"></i>
+          </button>
+        </div>
+        
+        <div class="md:ml-6 flex-1">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+            <div>
+              <h1 class="text-2xl font-bold">John Doe</h1>
+              <p class="text-gray-500">@johndoe</p>
+            </div>
+            
+            <div class="mt-4 md:mt-0 flex space-x-2">
+              <button class="btn btn-primary">
+                <i class="fas fa-user-plus mr-2"></i>
+                Follow
+              </button>
+              <button class="btn bg-gray-100 text-gray-700 hover:bg-gray-200">
+                <i class="fas fa-envelope mr-2"></i>
+                Message
+              </button>
+              <button class="btn bg-gray-100 text-gray-700 hover:bg-gray-200">
+                <i class="fas fa-ellipsis-h"></i>
+              </button>
+            </div>
+          </div>
+          
+          <div class="mt-4">
+            <p class="text-gray-700">Digital creator and tech enthusiast. Sharing my journey through photography, coding, and everyday adventures. ✨</p>
+          </div>
+          
+          <div class="mt-4 flex items-center space-x-4 text-sm">
+            <div class="flex items-center text-gray-500">
+              <i class="fas fa-map-marker-alt mr-1"></i>
+              <span>San Francisco, CA</span>
+            </div>
+            
+            <div class="flex items-center text-gray-500">
+              <i class="fas fa-link mr-1"></i>
+              <a href="#" class="text-primary-500 hover:underline">johndoe.com</a>
+            </div>
+            
+            <div class="flex items-center text-gray-500">
+              <i class="fas fa-calendar-alt mr-1"></i>
+              <span>Joined June 2020</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-6 flex border-b">
+        <button class="px-4 py-3 font-medium text-gray-500 hover:text-gray-900 border-b-2 border-transparent hover:border-gray-300 transition-all">Posts</button>
+        <button class="px-4 py-3 font-medium text-gray-900 border-b-2 border-primary-500 transition-all">Photos</button>
+        <button class="px-4 py-3 font-medium text-gray-500 hover:text-gray-900 border-b-2 border-transparent hover:border-gray-300 transition-all">Videos</button>
+        <button class="px-4 py-3 font-medium text-gray-500 hover:text-gray-900 border-b-2 border-transparent hover:border-gray-300 transition-all">About</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Stats Cards -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+    <div class="card">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold text-lg">Posts</h3>
+        <span class="text-2xl font-bold text-primary-500">248</span>
+      </div>
+      <p class="text-gray-500 text-sm mt-1">12 new posts this week</p>
+    </div>
+    
+    <div class="card">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold text-lg">Followers</h3>
+        <span class="text-2xl font-bold text-secondary-500">12.4K</span>
+      </div>
+      <p class="text-gray-500 text-sm mt-1">+248 followers this month</p>
+    </div>
+    
+    <div class="card">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold text-lg">Following</h3>
+        <span class="text-2xl font-bold text-accent-500">843</span>
+      </div>
+      <p class="text-gray-500 text-sm mt-1">Followed 18 new accounts</p>
+    </div>
+  </div>
+  
+  <!-- Photo Grid -->
+  <div class="card">
+    <div class="flex justify-between items-center mb-4">
+      <h3 class="font-semibold text-lg">Photos</h3>
+      <a href="#" class="text-primary-500 text-sm hover:underline">View All</a>
+    </div>
+    
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <% for (let i = 1; i <= 8; i++) { %>
+        <div class="relative group rounded-xl overflow-hidden">
+          <img src="https://source.unsplash.com/random/300x300/?nature,<%= i %>" alt="Photo" class="w-full h-48 object-cover">
+          <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <div class="text-white flex space-x-3">
+              <button class="hover:text-primary-400">
+                <i class="fas fa-heart"></i>
+                <span class="ml-1">42</span>
+              </button>
+              <button class="hover:text-primary-400">
+                <i class="fas fa-comment"></i>
+                <span class="ml-1">8</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </div>
+  
+  <!-- Recent Posts -->
+  <div class="mt-6">
+    <h3 class="font-semibold text-lg mb-4">Recent Posts</h3>
+    
+    <div class="space-y-6">
+      <!-- Post 1 -->
+      <div class="card">
+        <div class="flex justify-between items-start mb-4">
+          <div class="flex items-center space-x-3">
+            <img src="https://i.pravatar.cc/150?img=11" alt="Profile" class="avatar h-10 w-10">
+            <div>
+              <h4 class="font-semibold">John Doe</h4>
+              <p class="text-gray-500 text-sm">Yesterday at 3:45 PM</p>
+            </div>
+          </div>
+          
+          <button class="text-gray-500 hover:text-gray-700">
+            <i class="fas fa-ellipsis-h"></i>
+          </button>
+        </div>
+        
+        <div class="mb-4">
+          <p class="mb-3">Just got back from an amazing weekend trip to the mountains. The views were incredible and the air was so fresh. Can't wait to go back! 🏔️ #WeekendGetaway #MountainVibes</p>
+          <div class="grid grid-cols-2 gap-2 rounded-xl overflow-hidden">
+            <img src="https://source.unsplash.com/random/500x500/?mountains,1" alt="Post Image" class="w-full h-48 object-cover">
+            <img src="https://source.unsplash.com/random/500x500/?mountains,2" alt="Post Image" class="w-full h-48 object-cover">
+            <img src="https://source.unsplash.com/random/500x500/?mountains,3" alt="Post Image" class="w-full h-48 object-cover">
+            <div class="relative">
+              <img src="https://source.unsplash.com/random/500x500/?mountains,4" alt="Post Image" class="w-full h-48 object-cover">
+              <div class="absolute inset-0 bg-black/50 flex items-center justify-center text-white font-bold">
+                +3 more
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flex justify-between items-center mb-4 text-sm">
+          <div class="flex items-center space-x-2">
+            <div class="flex -space-x-1">
+              <div class="w-6 h-6 rounded-full bg-primary-500 flex items-center justify-center text-white">
+                <i class="fas fa-thumbs-up text-xs"></i>
+              </div>
+              <div class="w-6 h-6 rounded-full bg-accent-500 flex items-center justify-center text-white">
+                <i class="fas fa-heart text-xs"></i>
+              </div>
+            </div>
+            <span class="text-gray-500">186 likes</span>
+          </div>
+          
+          <div class="text-gray-500">
+            <span>32 comments</span>
+            <span class="mx-1">•</span>
+            <span>8 shares</span>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-100 pt-3 flex justify-between">
+          <button class="flex items-center text-gray-500 hover:text-primary-500 px-3 py-1 rounded-lg hover:bg-gray-100">
+            <i class="fas fa-thumbs-up mr-2"></i>
+            <span>Like</span>
+          </button>
+          
+          <button class="flex items-center text-gray-500 hover:text-primary-500 px-3 py-1 rounded-lg hover:bg-gray-100">
+            <i class="fas fa-comment mr-2"></i>
+            <span>Comment</span>
+          </button>
+          
+          <button class="flex items-center text-gray-500 hover:text-primary-500 px-3 py-1 rounded-lg hover:bg-gray-100">
+            <i class="fas fa-share mr-2"></i>
+            <span>Share</span>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Post 2 -->
+      <div class="card">
+        <div class="flex justify-between items-start mb-4">
+          <div class="flex items-center space-x-3">
+            <img src="https://i.pravatar.cc/150?img=11" alt="Profile" class="avatar h-10 w-10">
+            <div>
+              <h4 class="font-semibold">John Doe</h4>
+              <p class="text-gray-500 text-sm">Last week</p>
+            </div>
+          </div>
+          
+          <button class="text-gray-500 hover:text-gray-700">
+            <i class="fas fa-ellipsis-h"></i>
+          </button>
+        </div>
+        
+        <div class="mb-4">
+          <p>Just finished reading this amazing book! It's definitely going on my list of favorites. Has anyone else read it? Would love to hear your thoughts! 📚 #BookLovers #MustRead</p>
+        </div>
+        
+        <div class="flex justify-between items-center mb-4 text-sm">
+          <div class="flex items-center space-x-2">
+            <div class="flex -space-x-1">
+              <div class="w-6 h-6 rounded-full bg-primary-500 flex items-center justify-center text-white">
+                <i class="fas fa-thumbs-up text-xs"></i>
+              </div>
+            </div>
+            <span class="text-gray-500">73 likes</span>
+          </div>
+          
+          <div class="text-gray-500">
+            <span>18 comments</span>
+            <span class="mx-1">•</span>
+            <span>2 shares</span>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-100 pt-3 flex justify-between">
+          <button class="flex items-center text-gray-500 hover:text-primary-500 px-3 py-1 rounded-lg hover:bg-gray-100">
+            <i class="fas fa-thumbs-up mr-2"></i>
+            <span>Like</span>
+          </button>
+          
+          <button class="flex items-center text-gray-500 hover:text-primary-500 px-3 py-1 rounded-lg hover:bg-gray-100">
+            <i class="fas fa-comment mr-2"></i>
+            <span>Comment</span>
+          </button>
+          
+          <button class="flex items-center text-gray-500 hover:text-primary-500 px-3 py-1 rounded-lg hover:bg-gray-100">
+            <i class="fas fa-share mr-2"></i>
+            <span>Share</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
