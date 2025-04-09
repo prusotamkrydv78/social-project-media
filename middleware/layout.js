@@ -1,5 +1,5 @@
 // Middleware to handle EJS layouts
-module.exports = function(req, res, next) {
+export default function(req, res, next) {
   // Store the original render function
   const originalRender = res.render;
 

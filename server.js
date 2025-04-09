@@ -1,9 +1,9 @@
-const express = require('express');
-const path = require('path');
-const app = express();
-const port = process.env.PORT || 3000;
-const layoutMiddleware = require('./middleware/layout');
 
+import express from 'express';
+import path from 'path';
+import layoutMiddleware from './middleware/layout.js';
+const port = process.env.PORT || 3000;
+const app = express();
 // Set EJS as the view engine
 app.set('view engine', 'ejs');
 
@@ -11,7 +11,7 @@ app.set('view engine', 'ejs');
 app.use(layoutMiddleware);
 
 // Serve static files from the public directory
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 
 // Routes
 app.get('/', (req, res) => {

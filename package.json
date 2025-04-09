@@ -2,6 +2,7 @@
   "name": "social-project-media",
   "version": "1.0.0",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
@@ -13,7 +14,8 @@
   "description": "",
   "dependencies": {
     "ejs": "^3.1.10",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "mongoose": "^8.13.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
