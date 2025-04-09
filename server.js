@@ -1,5 +1,5 @@
 
-import express from 'express'; 
+import express from 'express';
 import layoutMiddleware from './middleware/layout.js';
 import AuthRoute from './routes/Auth.route.js';
 import connectDb from './connection/index.connection.js';
@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }))
 
 // Serve static files from the public directory
 app.use(express.static('public'));
-app.use('/auth', AuthRoute) 
+app.use('/auth', AuthRoute)
 
 // Routes
 app.get('/', (req, res) => {
@@ -66,6 +66,18 @@ app.get('/reset-password', (req, res) => {
 
 app.get('/password-reset-success', (req, res) => {
   res.render('pages/password-reset-success', { layout: 'auth' });
+});
+
+app.get('/create-story', (req, res) => {
+  res.render('pages/create-story');
+});
+
+app.get('/view-story', (req, res) => {
+  res.render('pages/view-story', { layout: false });
+});
+
+app.get('/stories', (req, res) => {
+  res.render('pages/stories');
 });
 
 // Start the server

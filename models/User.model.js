@@ -35,6 +35,14 @@ const UserSchema = new mongoose.Schema({
         description: String,
     },
     isPro: Boolean,
+    favoritePosts:[String],
+    isAdmin: Boolean,
+    isVerified: Boolean,
+    isBanned: Boolean,
+    isPrivate: Boolean, 
+    blockAccounts: [String],
+    likedPosts: [String]
+
 })
 
 export default  new mongoose.model("users",UserSchema);
