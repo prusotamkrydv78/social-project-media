@@ -11,10 +11,13 @@ module.exports = function(req, res, next) {
     // Add the current path to the options
     options.path = req.path;
 
-    // If the view is already the layout, just render it
-    if (view === 'layouts/main') {
+    // If the view is already a layout, just render it
+    if (view.startsWith('layouts/')) {
       return originalRender.call(this, view, options, callback);
     }
+
+    // Determine which layout to use
+    const layoutName = options.layout === 'auth' ? 'layouts/auth' : 'layouts/main';
 
     // Render the view first
     originalRender.call(res, view, options, (err, renderedView) => {
@@ -22,7 +25,7 @@ module.exports = function(req, res, next) {
 
       // Then render the layout with the view content
       options.body = renderedView;
-      originalRender.call(res, 'layouts/main', options, callback);
+      originalRender.call(res, layoutName, options, callback);
     });
   };
 

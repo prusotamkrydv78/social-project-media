@@ -38,6 +38,14 @@ app.get('/messages', (req, res) => {
   res.render('pages/messages');
 });
 
+app.get('/login', (req, res) => {
+  res.render('pages/login', { layout: 'auth' });
+});
+
+app.get('/register', (req, res) => {
+  res.render('pages/register', { layout: 'auth' });
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
