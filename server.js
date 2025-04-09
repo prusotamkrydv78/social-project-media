@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }))
 
 // Serve static files from the public directory
 app.use(express.static('public'));
-app.use('/auth', AuthRoute)
+app.use('/auth', AuthRoute) 
 
 // Routes
 app.get('/', (req, res) => {

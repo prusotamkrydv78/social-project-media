@@ -45,6 +45,30 @@ AuthRoute.get("/login", (req, res) => {
 
 })
 
+AuthRoute.post("/login", async (req, res) => {
+    const { email, password } = req.body;
+    const allUsers = await UserModel.find();
+    const user = allUsers.find((user) => {
+        const isPasswordIsCorrect = bcrypt.compareSync(password, user.password);
+        if (user.email == email && isPasswordIsCorrect) return user
+    });
+
+    console.log(user)
+
+
+    try {
+        res.redirect("/")
+    } catch (error) {
+        res.json({
+            status: "Failed",
+            message: "Failed to login user",
+            error: "Failed due to " + error
+        })
+
+    }
+
+})
+
 //////////Encrypt password//////////////
 const encryptPassword = (password) => {
     const hashPassword = bcrypt.hashSync(password, salt);
