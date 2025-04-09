@@ -46,6 +46,22 @@ app.get('/register', (req, res) => {
   res.render('pages/register', { layout: 'auth' });
 });
 
+app.get('/forgot-password', (req, res) => {
+  res.render('pages/forgot-password', { layout: 'auth' });
+});
+
+app.get('/verify-code', (req, res) => {
+  res.render('pages/verify-code', { layout: 'auth' });
+});
+
+app.get('/reset-password', (req, res) => {
+  res.render('pages/reset-password', { layout: 'auth' });
+});
+
+app.get('/password-reset-success', (req, res) => {
+  res.render('pages/password-reset-success', { layout: 'auth' });
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
