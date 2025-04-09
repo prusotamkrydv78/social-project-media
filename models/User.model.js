@@ -37,4 +37,4 @@ const UserSchema = new mongoose.Schema({
     isPro: Boolean,
 })
 
-export default UserSchema;
+export default  new mongoose.model("users",UserSchema);

@@ -1,17 +1,23 @@
 
-import express from 'express';
-import path from 'path';
+import express from 'express'; 
 import layoutMiddleware from './middleware/layout.js';
+import AuthRoute from './routes/Auth.route.js';
+import connectDb from './connection/index.connection.js';
 const port = process.env.PORT || 3000;
 const app = express();
 // Set EJS as the view engine
 app.set('view engine', 'ejs');
+// connecting to the database
+connectDb()
 
 // Use layout middleware
 app.use(layoutMiddleware);
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
 // Serve static files from the public directory
 app.use(express.static('public'));
+app.use('/auth', AuthRoute)
 
 // Routes
 app.get('/', (req, res) => {
@@ -38,9 +44,9 @@ app.get('/messages', (req, res) => {
   res.render('pages/messages');
 });
 
-app.get('/login', (req, res) => {
-  res.render('pages/login', { layout: 'auth' });
-});
+// app.get('/auth/login', (req, res) => {
+//   res.render('pages/login', { layout: 'auth' });
+// });
 
 app.get('/register', (req, res) => {
   res.render('pages/register', { layout: 'auth' });
